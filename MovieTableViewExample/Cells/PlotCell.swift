@@ -22,15 +22,19 @@ class PlotCell: UITableViewCell {
         return lbl
     }()
     
-    // MARK: - Private methods
+    // MARK: - Public methods 
     
-    fileprivate func configure(with descriptionSection: DescriptionSection) {
+    func configure(with descriptionSection: DescriptionSection) {
         self.descriptionSection = descriptionSection
         
         setupUI()
     }
     
+    // MARK: - Private methods
+    
     fileprivate func setupUI() {
+        addSubview(descriptionLabel)
+        
         descriptionLabel.text = descriptionSection.description ?? ""
         
         setupConstraints()

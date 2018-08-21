@@ -40,6 +40,9 @@ class InfoCell: UITableViewCell {
     // MARK: - Private methods
     
     fileprivate func setupUI() {
+        addSubview(keyLabel)
+        addSubview(valueLabel)
+        
         keyLabel.text = infoSection.info[index].key
         valueLabel.text = infoSection.info[index].value
         

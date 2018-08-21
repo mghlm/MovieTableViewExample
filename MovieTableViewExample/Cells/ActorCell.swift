@@ -44,6 +44,9 @@ class ActorCell: UITableViewCell {
     // MARK: - Private methods
     
     fileprivate func setupUI() {
+        addSubview(actorImageView)
+        addSubview(actorNameLabel)
+        
         actorNameLabel.text = actorSection.actors[index].name ?? ""
         
         setupConstraints()

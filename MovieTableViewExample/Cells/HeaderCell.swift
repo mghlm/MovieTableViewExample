@@ -41,6 +41,9 @@ class HeaderCell: UITableViewCell {
     // MARK: - Private methods
     
     fileprivate func setupUI() {
+        addSubview(posterImageView)
+        addSubview(movieTitleLabel)
+        
         movieTitleLabel.text = headerSection.movieTitle ?? ""
         
         setupConstraints()
