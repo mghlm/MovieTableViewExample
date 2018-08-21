@@ -16,6 +16,8 @@ class InfoCell: UITableViewCell {
     
     // MARK: - Private properties
     
+    fileprivate var index: Int!
+    
     fileprivate var keyLabel: UILabel = {
         let lbl = UILabel()
         return lbl
@@ -28,7 +30,8 @@ class InfoCell: UITableViewCell {
     
     // MARK: - Public methods
     
-    func configure(with infoSection: InfoSection) {
+    func configure(with infoSection: InfoSection, for index: Int) {
+        self.index = index
         self.infoSection = infoSection
         
         setupUI()
@@ -37,7 +40,8 @@ class InfoCell: UITableViewCell {
     // MARK: - Private methods
     
     fileprivate func setupUI() {
-//        keyLabel.text = infoSection.info
+        keyLabel.text = infoSection.info[index].key
+        valueLabel.text = infoSection.info[index].value
         
         setupConstraints()
     }

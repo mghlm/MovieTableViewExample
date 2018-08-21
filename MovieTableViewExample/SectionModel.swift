@@ -14,9 +14,16 @@ struct Movie: Codable {
     var title: String?
     var poster: String?
     var plot: String?
-    var info: [String: String]?
+    var info: [Info]?
     var actors: [Actor]?
     var images: [String]?
+}
+
+/// Info
+
+struct Info: Codable {
+    var key: String
+    var value: String
 }
 
 /// Actor
@@ -74,7 +81,7 @@ struct InfoSection: Section {
         return info.count
     }
     
-    var info: [String: String]
+    var info: [Info]
 }
 
 struct ActorsSection: Section {
@@ -125,7 +132,7 @@ struct SectionViewModel {
             sections.append(DescriptionSection(description: description))
         }
         
-        if let info = movie.info {
+        if let info = movie.info, !info.isEmpty {
             sections.append(InfoSection(info: info))
         }
         
