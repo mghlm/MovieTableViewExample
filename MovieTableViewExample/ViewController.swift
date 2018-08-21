@@ -31,6 +31,8 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupUI() {
+        movieTableView.delegate = self
+        movieTableView.dataSource = self
         view.addSubview(movieTableView)
         
         if let movie = mapJson(with: "movie") {
@@ -78,7 +80,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = viewModel.sections[indexPath.row]
+        let section = viewModel.sections[indexPath.section]
         
         switch section.sectionType {
         case .header:

@@ -42,6 +42,6 @@ class PlotCell: UITableViewCell {
     
     fileprivate func setupConstraints() {
         descriptionLabel.anchor(centerX: centerXAnchor, centerY: centerYAnchor)
-        descriptionLabel.anchor(top: nil, left: nil, bottom: nil, right: nil, paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 8, width: 0, height: 0)
+        descriptionLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 8, width: 0, height: 0)
     }
 }
