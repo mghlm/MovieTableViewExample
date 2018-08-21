@@ -22,15 +22,15 @@ struct Movie: Codable {
 /// Info
 
 struct Info: Codable {
-    var key: String
-    var value: String
+    var key: String?
+    var value: String?
 }
 
 /// Actor
 
 struct Actor: Codable {
-    var name: String
-    var image: String
+    var name: String?
+    var image: String?
 }
 
 /// Section
