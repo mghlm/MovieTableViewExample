@@ -38,8 +38,10 @@ class HeaderCell: UITableViewCell {
         return lbl
     }()
     
+    // MARK: - Private methods
+    
     fileprivate func setupUI() {
-        movieTitleLabel.text = headerSection.movieTitle ?? "" 
+        movieTitleLabel.text = headerSection.movieTitle ?? ""
         
         setupConstraints()
     }
@@ -50,9 +52,6 @@ class HeaderCell: UITableViewCell {
         movieTitleLabel.anchor(centerX: nil, centerY: centerYAnchor)
         movieTitleLabel.anchor(top: nil, left: posterImageView.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
-    
-    
-    // MARK: - Private methods
     
     fileprivate func setupPosterImage() {
         guard let imageUrl = headerSection.moviePoster else { return }
@@ -67,9 +66,9 @@ class HeaderCell: UITableViewCell {
             guard let data = data else { return }
             DispatchQueue.main.async {
                 self.posterImageView.image = UIImage(data: data)
+                self.posterImageView.layer.cornerRadius = 8
+                self.posterImageView.clipsToBounds = true 
             }
         }.resume()
     }
-    
-    
 }
