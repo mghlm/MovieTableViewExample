@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     fileprivate var movieTableView: UITableView = {
         let tv = UITableView()
+        tv.backgroundColor = UIColor.rgb(red: 247, green: 247, blue: 247)
         tv.register(HeaderCell.self, forCellReuseIdentifier: "headerCell")
         tv.register(PlotCell.self, forCellReuseIdentifier: "plotCell")
         tv.register(InfoCell.self, forCellReuseIdentifier: "infoCell")
@@ -31,6 +32,8 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupUI() {
+        view.backgroundColor = UIColor.rgb(red: 247, green: 247, blue: 247)
+        movieTableView.backgroundColor = .clear
         movieTableView.delegate = self
         movieTableView.dataSource = self
         view.addSubview(movieTableView)
@@ -43,7 +46,7 @@ class ViewController: UIViewController {
     }
     
     fileprivate func setupConstraints() {
-        movieTableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        movieTableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 64, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     fileprivate func mapJson(with file: String) -> Movie? {
@@ -67,8 +70,33 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return viewModel.sections[section].title
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: .zero)
+        view.backgroundColor = .clear
+        let label = UILabel()
+        if let string = viewModel.sections[section].title {
+            label.text = string.capitalized
+        }
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        view.addSubview(label)
+        label.anchor(centerX: nil, centerY: view.centerYAnchor)
+        label.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        
+        return view
+    }
+    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        view.backgroundColor = .clear
+        return view 
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -98,6 +126,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case .actors:
             let cell = tableView.dequeueReusableCell(withIdentifier: "actorCell") as! ActorCell
             cell.configure(with: section as! ActorsSection, for: indexPath.row)
+            cell.accessoryType = .disclosureIndicator
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell")

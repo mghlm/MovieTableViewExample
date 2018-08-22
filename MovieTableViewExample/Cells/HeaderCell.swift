@@ -11,7 +11,7 @@ import UIKit
 class HeaderCell: UITableViewCell {
     
     // MARK: - Dependencies
-    
+
     var headerSection: HeaderSection! {
         didSet {
             setupPosterImage()
@@ -35,6 +35,7 @@ class HeaderCell: UITableViewCell {
     
     fileprivate var movieTitleLabel: UILabel = {
         let lbl = UILabel()
+        lbl.font = UIFont.systemFont(ofSize: 28)
         return lbl
     }()
     
@@ -51,9 +52,9 @@ class HeaderCell: UITableViewCell {
     
     fileprivate func setupConstraints() {
         
-        posterImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 0, width: 50, height: 50)
+        posterImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 16, paddingLeft: 8, paddingBottom: 16, paddingRight: 0, width: 100, height: 100)
         movieTitleLabel.anchor(centerX: nil, centerY: centerYAnchor)
-        movieTitleLabel.anchor(top: nil, left: posterImageView.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        movieTitleLabel.anchor(top: nil, left: posterImageView.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 16, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
     }
     
     fileprivate func setupPosterImage() {

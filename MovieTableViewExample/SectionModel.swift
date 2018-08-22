@@ -8,8 +8,6 @@
 
 import Foundation
 
-/// Movie
-
 struct Movie: Codable {
     var title: String?
     var poster: String?
@@ -19,14 +17,10 @@ struct Movie: Codable {
     var images: [String]?
 }
 
-/// Info
-
 struct Info: Codable {
     var key: String?
     var value: String?
 }
-
-/// Actor
 
 struct Actor: Codable {
     var name: String?
