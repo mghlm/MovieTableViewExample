@@ -19,6 +19,7 @@ class PlotCell: UITableViewCell {
     fileprivate var descriptionLabel: UILabel = {
         let lbl = UILabel()
         lbl.numberOfLines = 0
+        lbl.font = UIFont.italicSystemFont(ofSize: 18)
         return lbl
     }()
     
@@ -42,6 +43,6 @@ class PlotCell: UITableViewCell {
     
     fileprivate func setupConstraints() {
         descriptionLabel.anchor(centerX: centerXAnchor, centerY: centerYAnchor)
-        descriptionLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 8, width: 0, height: 0)
+        descriptionLabel.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 16, paddingRight: 16, width: 0, height: 0)
     }
 }

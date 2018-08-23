@@ -12,6 +12,7 @@
 		CC2F9F50212C51AF00E1112A /* PlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F9F4F212C51AF00E1112A /* PlotCell.swift */; };
 		CC2F9F52212C55A700E1112A /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F9F51212C55A700E1112A /* InfoCell.swift */; };
 		CC2F9F54212C649F00E1112A /* ActorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F9F53212C649F00E1112A /* ActorCell.swift */; };
+		CC2F9F56212DBCB800E1112A /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2F9F55212DBCB800E1112A /* GalleryCell.swift */; };
 		CC61CB3D212197180051FE74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC61CB3C212197180051FE74 /* AppDelegate.swift */; };
 		CC61CB3F212197180051FE74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC61CB3E212197180051FE74 /* ViewController.swift */; };
 		CC61CB42212197180051FE74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC61CB40212197180051FE74 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		CC2F9F4F212C51AF00E1112A /* PlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotCell.swift; sourceTree = "<group>"; };
 		CC2F9F51212C55A700E1112A /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		CC2F9F53212C649F00E1112A /* ActorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorCell.swift; sourceTree = "<group>"; };
+		CC2F9F55212DBCB800E1112A /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		CC61CB39212197180051FE74 /* MovieTableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC61CB3C212197180051FE74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC61CB3E212197180051FE74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				CC2F9F4F212C51AF00E1112A /* PlotCell.swift */,
 				CC2F9F51212C55A700E1112A /* InfoCell.swift */,
 				CC2F9F53212C649F00E1112A /* ActorCell.swift */,
+				CC2F9F55212DBCB800E1112A /* GalleryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				CC2F9F4E212C4BAB00E1112A /* Extensions.swift in Sources */,
 				CC2F9F4B212C0D2400E1112A /* HeaderCell.swift in Sources */,
 				CC61CB3F212197180051FE74 /* ViewController.swift in Sources */,
+				CC2F9F56212DBCB800E1112A /* GalleryCell.swift in Sources */,
 				CC2F9F54212C649F00E1112A /* ActorCell.swift in Sources */,
 				CC61CB3D212197180051FE74 /* AppDelegate.swift in Sources */,
 				CC2F9F50212C51AF00E1112A /* PlotCell.swift in Sources */,

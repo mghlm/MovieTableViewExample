@@ -113,6 +113,36 @@ enum SectionType {
 /// ViewModel
 
 struct SectionViewModel {
+    
+    
+    func getSections(for movie: Movie) -> [Section] {
+        var sections = [Section]()
+        
+        if let movieTitle = movie.title, let moviePoster = movie.poster {
+            sections.append(HeaderSection(movieTitle: movieTitle, moviePoster: moviePoster))
+        }
+        
+        if let description = movie.plot {
+            sections.append(DescriptionSection(description: description))
+        }
+        
+        if let info = movie.info, !info.isEmpty {
+            sections.append(InfoSection(info: info))
+        }
+        
+        if let actors = movie.actors, !actors.isEmpty {
+            sections.append(ActorsSection(actors: actors))
+        }
+        
+        if let images = movie.images, !images.isEmpty {
+            sections.append(ImagesSection(images: images))
+        }
+        
+        return sections
+        
+    }
+    
+    
     var sections: [Section]
     
     init(movie: Movie) {

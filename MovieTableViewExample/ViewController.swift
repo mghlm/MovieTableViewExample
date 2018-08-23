@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     fileprivate var movieTableView: UITableView = {
         let tv = UITableView()
+        tv.allowsSelection = false 
         tv.backgroundColor = UIColor.rgb(red: 247, green: 247, blue: 247)
         tv.register(HeaderCell.self, forCellReuseIdentifier: "headerCell")
         tv.register(PlotCell.self, forCellReuseIdentifier: "plotCell")
@@ -72,12 +73,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: .zero)
-        view.backgroundColor = .clear
+        view.backgroundColor = UIColor.rgb(red: 247, green: 247, blue: 247)
         let label = UILabel()
         if let string = viewModel.sections[section].title {
-            label.text = string.capitalized
+            label.text = string
         }
         label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.textColor = .lightGray
         view.addSubview(label)
         label.anchor(centerX: nil, centerY: view.centerYAnchor)
         label.anchor(top: nil, left: view.leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)

@@ -55,7 +55,7 @@ class ActorCell: UITableViewCell {
     fileprivate func setupConstraints() {
         actorImageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: nil, paddingTop: 8, paddingLeft: 8, paddingBottom: 8, paddingRight: 0, width: 60, height: 60)
         actorNameLabel.anchor(centerX: nil, centerY: centerYAnchor)
-        actorNameLabel.anchor(top: nil, left: leftAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
+        actorNameLabel.anchor(top: nil, left: actorImageView.rightAnchor, bottom: nil, right: nil, paddingTop: 0, paddingLeft: 8, paddingBottom: 0, paddingRight: 0, width: 0, height: 0)
         
     }
     
