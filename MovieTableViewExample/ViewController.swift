@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         tv.register(PlotCell.self, forCellReuseIdentifier: "plotCell")
         tv.register(InfoCell.self, forCellReuseIdentifier: "infoCell")
         tv.register(ActorCell.self, forCellReuseIdentifier: "actorCell")
+        tv.register(GalleryCell.self, forCellReuseIdentifier: "galleryCell")
         tv.register(UITableViewCell.self, forCellReuseIdentifier: "defaultCell")
         
         return tv
@@ -130,11 +131,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(with: section as! ActorsSection, for: indexPath.row)
             cell.accessoryType = .disclosureIndicator
             return cell
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell")
-            return cell!
+        case .images:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "galleryCell") as! GalleryCell
+            cell.configure(with: section as! ImagesSection)
+            return cell
         }
-        
     }
     
 }

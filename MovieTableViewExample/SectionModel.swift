@@ -100,7 +100,7 @@ struct ImagesSection: Section {
         return "Images"
     }
     var cellCount: Int {
-        return images.count
+        return 1
     }
     
     var images: [String?]
